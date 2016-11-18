@@ -25,14 +25,14 @@ public class DetectFace extends HttpServlet {
 		String sessionId = request.getParameter("sessionId");
 		String imageLink = request.getParameter("text");
 
-		JsonObject cred = Set.settingMap.get(sessionId);
+		JsonObject cred = Set.settingMap.get(sessionId)==null?new JsonObject():Set.settingMap.get(sessionId);
 		
 		JsonObject output = new JsonObject();
 		
 		try {
 			VisualRecognition service = new VisualRecognition(VisualRecognition.VERSION_DATE_2016_05_20);
 		    service.setApiKey(cred.get("apikey")==null?"":cred.get("apikey").getAsString()); 
-		    service.setEndPoint(cred.get("endpoint")==null?"https://gateway-a.watsonplatform.net/visual-recognition/api":cred.get("endpoint").getAsString());
+		    service.setEndPoint(cred.get("endpoint")==null?"https://watson-api-explorer.mybluemix.net/visual-recognition/api":cred.get("endpoint").getAsString());
 		    
 		    VisualRecognitionOptions voptions = new VisualRecognitionOptions.Builder().url(imageLink).build();
 		    
