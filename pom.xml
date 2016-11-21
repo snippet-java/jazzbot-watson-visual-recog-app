@@ -40,9 +40,16 @@
         </dependency>
         <dependency>
         	<groupId>com.ibm.watson.developer_cloud</groupId>
+        	<artifactId>java-sdk</artifactId>
+        	<version>3.2.0</version>
+        </dependency>
+        <!-- 
+        <dependency>
+        	<groupId>com.ibm.watson.developer_cloud</groupId>
         	<artifactId>visual-recognition</artifactId>
         	<version>3.5.1</version>
         </dependency>
+         -->
         <dependency>
         	<groupId>commons-io</groupId>
         	<artifactId>commons-io</artifactId>
